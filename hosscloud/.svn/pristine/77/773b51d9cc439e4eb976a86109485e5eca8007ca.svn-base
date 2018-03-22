@@ -1,0 +1,230 @@
+const app = getApp();
+
+var api = api || {};
+  api = {
+    "basePath": "https://test.fuyitianjian.net/repiar/"
+	/**
+	 * 登录
+	 */
+  , "login": "login/app"
+	/**
+	 * 报修项目
+	 */
+  , "repairProject": "repiar/create/project"
+	/**
+	 * 报修
+	 */
+  , "createScan": "repiar/create/scan"
+	/**
+	 * 报修项目
+	 */
+  , "repairProject": "repiar/create/project"
+	/**
+	 * 投诉
+	 */
+  , "repiarSue": "repiar/sue"
+	/**
+	 * 评价
+	 */
+  , "repiarPoint": "repiar/point"
+	/**
+	 * 评价详情
+	 */
+  , "pointDetail": "repiar/point/detail"
+	/**
+	 * 投诉详情
+	 */
+  , "sueDetail": "repiar/sue/detail"
+	/**
+	 * 删除报修
+	 */
+  , "repiarDelete": "repiar/my/delete"
+	/**
+	 * 取消报修
+	 */
+  , "repiarCancel": "repiar/my/cancel"
+	/**
+	 * 报修单列表
+	 */
+  , "myList": "repiar/my/list"
+	/**
+	 * 报修单详情
+	 */
+  , "repiarDetail": "repiar/detail"
+	/**
+	 * 维修单详情
+	 */
+  , "serviceDetail": "repiar/service/detail"
+	/**
+	 * 待派工列表
+	 */
+  , "groupList": "group/list"
+	/**
+	 * 派工工人列表
+	 */
+  , "workerList": "group/worker/list"
+	/**
+	 * 派工
+	 */
+  , "groupOprate": "group/oprate"
+	/**
+	 * 维修单列表
+	 */
+  , "serviceList": "service/list"
+	/**
+	 * 接单
+	 */
+  , "serviceAccept": "service/accept"
+	/**
+	 * 转单
+	 */
+  , "serviceTurnOn": "service/turnOn"
+	/**
+	 * 挂单
+	 */
+  , "serviceHang": "service/hang"
+	/**
+	 * 取消挂单
+	 */
+  , "serviceJoin": "service/join"
+	/**
+	 * 完工
+	 */
+  , "serviceFinish": "service/finish"
+	/**
+	 * 提交工单用料
+	 */
+  , "materialSubmit": "materials/out"
+	/**
+	 * 视频保修
+	 */
+  , "videoRepair": "repiar/create/video"
+	/**
+	 * 音频保修
+	 */
+  , "audioRepair": "repiar/create/audio"
+	/**
+	 * 获取设备列表
+	 */
+  , "drivceList": "drivce/tree"
+	/**
+	 * 维修用料列表
+	 */
+  , "materialsList": "materials/service/list"
+	/**
+	 * 仓库列表
+	 */
+  , "materialsHouse": "materials/house"
+	/**
+	 * 物料查询
+	 */
+  , "materialsQuery": "materials/query"
+	/**
+	 * 挂单原因
+	 */
+  , "hangCause": "content/get/repair-exten-type.json"
+	/**
+	 * 故障类型
+	 */
+  , "repiarType": "content/get/repair-repiar-type.json"
+	/**
+	 * 转单原因
+	 */
+  , "turnOnCause": "content/get/repair-transfer-type.json"
+	/**
+	 *设备扫一扫
+	 */
+  , "equipScan": "scan/code"
+	/**
+	 * 设备详情
+	 */
+  , "drivceDetail": "drivce/detail"
+	/**
+	 * 房间扫一扫
+	 */
+  , "roomScan": "scan/code"
+	/**
+	 * 房间详情
+	 */
+  , "roomDetail": "scan/otherScan"
+	/**
+	 * 报修紧急程度
+	 */
+  , "repairLevel": "_content/get/repair-level.json"
+	/**
+	 * 楼宇树
+	 */
+  , "serviceLocation": "service/location"
+	/**
+	 * 房间设备列表
+	 */
+  , "equipList": "drivce/equipList"
+	/**
+	 * 维修单数量
+	 */
+  , "serviceNum": "service/serviceNum"
+	/**
+	 * 上传文件
+	 */
+  , "uploadFile": "common/upload/file"
+}
+
+/**
+ * 公共处理请求之前数据
+ */
+function request(method,url, params, success, fail) {
+  this.requestLoading(method,url, params, "", success, fail)
+}
+// 展示进度条的网络请求
+// url:网络请求的url
+// params:请求参数
+// message:进度条的提示信息
+// success:成功的回调函数
+// fail：失败的回调
+function requestLoading(method, url, params, message, success, fail) {
+  console.log("请求参数："+params)
+  wx.showNavigationBarLoading()
+  if (message != "") {
+    wx.showLoading({
+      title: message,
+    })
+  }
+  wx.request({
+    url: api.basePath + url,
+    data: params,
+    header: {
+      'Content-Type': 'application/json',
+      'token': wx.getStorageSync("token")
+      // 'content-type': 'application/x-www-form-urlencoded'
+    },
+    method: method,
+    success: function (res) {
+      //console.log(res.data)
+      wx.hideNavigationBarLoading()
+      if (message != "") {
+        wx.hideLoading()
+      }
+      if (res.statusCode == 200) {
+        success(res.data)
+      } else {
+        fail()
+      }
+
+    },
+    fail: function (res) {
+      wx.hideNavigationBarLoading()
+      if (message != "") {
+        wx.hideLoading()
+      }
+      fail()
+    },
+    complete: function (res) {
+
+    },
+  })
+}
+module.exports = {
+  api: api,
+  request: request,
+  requestLoading: requestLoading
+}

@@ -1,0 +1,31 @@
+
+.containers{
+  width: 100vw;
+  height: 100vh;
+  background: url(https://res.fuyitianjian.net/images/wxml/IMG_BG.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.logo{
+  display: block;
+  width: 40vw;
+  height: 40vw;
+  padding-top: 20vh;
+  margin: auto;
+}
+
+
+.icon_SP{
+  display: block;
+  width: 45vw;
+  height: 17vw; 
+  padding-top: 10vh;
+  margin: auto;
+}
+.icon_YY{
+  display: block;
+  width: 45vw;
+  height: 17vw; 
+  padding-top: 10vh;
+  margin: auto;
+}

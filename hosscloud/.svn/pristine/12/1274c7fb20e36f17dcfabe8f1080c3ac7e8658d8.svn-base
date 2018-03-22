@@ -1,0 +1,7 @@
+<view class="container" style="background: url(./images/img_beijing.png);">
+  <image class='logo' src='./images/img_logo.png'></image>
+
+  <view class="search-container">
+    <input type="text" bindinput="searchInputEvent" placeholder="输入书名搜索"></input><icon bindtap="searchClickEvent"  type="search" size="20"/>
+  </view>
+</view>

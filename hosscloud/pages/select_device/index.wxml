@@ -1,0 +1,35 @@
+<!-- 扫房间，选设备 -->
+<view class="page">
+      <view class="weui-flex  kind-list_address">
+           <view class="weui-flex__item">报修位置</view>
+           <view class="weui-cell__ft">{{list.buildingName}} - {{list.floorName}} - {{list.name}}</view>
+       </view>
+    <view class="page__bd page__bd_spacing">
+        <view class="kind-list">
+            <block wx:for="{{list.equipList}}" wx:key="id" >
+                <view class="kind-list__item" wx:if="{{item.id == 0}}">
+                    <view id="{{item.id}}" class="weui-flex  kind-list__item-hd" bindtap='repair'>
+                        <view class="weui-flex__item">{{item.category}}</view>
+                        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                    </view>
+                </view>
+                <view class="kind-list__item" wx:else>
+                    <view id="{{item.category}}" class="weui-flex  kind-list__item-hd  {{item.isDelete ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+                        <view class="weui-flex__item">{{item.category}}</view>
+                        <view class="weui-cell__ft weui-cell__ft_in-access {{item.isDelete ? 'weui-cell__ft_in-access_show' : ''}}"></view>
+                    </view>
+                    <view class="kind-list__item-bd {{item.isDelete ? 'kind-list__item-bd_show' : ''}}">
+                        <view class="weui-cells {{item.isDelete ? 'weui-cells_show' : ''}}">
+                            <block wx:for="{{item.equipList}}" wx:for-item="page" wx:key="*this">
+                                <view id="{{page.id}}" class="weui-cell weui-cell_access" bindtap='repair'>
+                                    <view class="weui-cell__bd">{{page.name}}</view>
+                                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,3 @@
+<view class='containers'>
+  <image src="{{url}}" bindload="imageLoad" style="width:{{images.width}}rpx; height:{{images.height}}rpx;margin-left:16rpx;"/>
+</view>

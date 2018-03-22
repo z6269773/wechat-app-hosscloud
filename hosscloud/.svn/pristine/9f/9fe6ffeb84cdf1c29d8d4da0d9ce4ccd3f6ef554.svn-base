@@ -1,0 +1,67 @@
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    phone: null, //手机号
+    password: null //密码
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+  },
+  searchInputPhone: function (e) {
+    this.setData({ phone: e.detail.value });
+  },
+  searchInputPassword: function (e) {
+    this.setData({ password: e.detail.value });
+  },
+  searchClickLogin: function (e) {
+    console.log(this.data.phone, this.data.password)
+    if (!this.data.phone) {
+      wx.showModal({
+        title: '错误',
+        content: '请输入手机号',
+        showCancel: false, //不显示取消按钮
+        confirmText: '确定'
+      })
+    } else if (!this.data.password){
+      wx.showModal({
+        title: '错误',
+        content: '请输入密码',
+        showCancel: false, //不显示取消按钮
+        confirmText: '确定'
+      })
+    }else{
+      wx.request({
+        url: 'https://wechat.fuyitianjian.net/wechat/auth', //接口地址
+        method: "POST",
+        data: {
+          "phone": this.data.phone,
+          "password": this.data.password
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded' // 默认值
+        },
+        success: function (res) {
+          console.log(res.data)
+        }
+      })
+    }
+  }
+
+  
+
+ 
+})

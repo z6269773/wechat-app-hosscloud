@@ -1,0 +1,26 @@
+.containers{
+  width: 100vw;
+  height: 100vh;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+.conts{
+  width: 100%;
+  padding: 10px 0px;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  border-bottom: 1px solid #aaa;
+}
+.left{
+  width: 40%;
+}
+.right{
+  width: 60%;
+  text-align: right;
+  color: #aaa;
+  font-size: 26rpx;
+  line-height: 52rpx;
+}
+.texts{
+  color: #aaa;
+}

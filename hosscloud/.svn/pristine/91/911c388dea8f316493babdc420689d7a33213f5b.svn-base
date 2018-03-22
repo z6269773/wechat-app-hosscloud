@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="containers">
+  <view class='lis'>
+    <view class='ub conb ulev-4'>
+      <image class='category' src='https://res.fuyitianjian.net/images/img_dian.png'></image>
+      <view class='conb2'>
+        <view class='txts font_weight ulev-3 cutText'>【灯】灯不亮了</view>
+        <view class='txts color-666 cutText-2'>2017-08-25 12：15：12</view>
+      </view>
+    </view>
+  
+  </view>
+
+  <view class='lis'>
+    <view class='ub conb ulev-4'>
+      <view class='red'><text style='color:red;'>*</text> 投诉内容</view>
+      <textarea class='textarea' placeholder='请输入投诉内容，不少于10个字'></textarea>
+    </view>
+  
+  </view>
+
+  <button class='btn'>提交</button>
+   
+</view>

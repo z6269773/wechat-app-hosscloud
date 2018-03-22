@@ -1,0 +1,126 @@
+<!-- 设备详情 -->
+
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <!-- 1 -->
+          <view class="page__bd">
+          <view class="weui-cells__swiper {{imgUrls.length < 0 ? 'weui-cells__swiper_show' : ''}}">
+            <swiper indicator-dots="{{indicatorDots}}"
+                autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                <block wx:for="{{imgUrls}}">
+                  <swiper-item>
+                    <image src="{{item}}" class="slide-image" width="355" height="150"/>
+                  </swiper-item>
+                </block>
+              </swiper>
+          </view>
+          <!-- swiper END -->
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell">
+                <view class="weui-cell__bd">设备名称</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">设备编号</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">规格型号</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">设备类型</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">设备标识</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">维保厂商</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+            </view>
+            <view class="weui-cells__title">资产及使用</view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell">
+                <view class="weui-cell__bd">资产原值</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">资产净值</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">使用年限</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">安装地点</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">安装地点</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">启用日期</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">使用部门</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+            </view>
+          </view>
+          <button class="weui-btn" type="primary" bindtap="repair">报修</button>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <view class="page__bd">
+            <view class="weui-cells__title"></view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell">
+                <view class="weui-cell__bd">维修时间</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">维修项目</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">维修技师</view>
+                <view class="weui-cell__ft">说明文字</view>
+            </view>
+            </view>
+            <view class="weui-cells__title"></view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell">
+                <view class="weui-cell__bd">维修时间</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">维修项目</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+              <view class="weui-cell">
+                <view class="weui-cell__bd">维修技师</view>
+                <view class="weui-cell__ft">说明文字</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

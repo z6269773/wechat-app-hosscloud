@@ -1,0 +1,83 @@
+<!-- 扫房间，选设备 -->
+<view class="page">
+      <view class="kind-list__item">
+                    <view id="{{item.id}}" class="weui-flex  kind-list__item-hd" bindtap="kindToggle">
+                        <view class="weui-flex__item">报修位置</view>
+                        <view class="weui-cell__ft">{{}}</view>
+                    </view>
+        </view>
+    <view class="page__bd page__bd_spacing">
+        <view class="kind-list">
+            <block>
+               <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell">
+                      <view class="weui-cell__bd">报修项目</view>
+                       <view class="weui-cell__ft weui-cell__ft_in-access">{{}}</view>
+                    </view>
+                    <view class="weui-cell">
+                        <textarea class="weui-textarea_diy" placeholder="描述设备故障情况" />
+                    </view>
+                    <view class="weui-cell">
+                     <!-- uploader -->
+                      <view class="weui-uploader">
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                             <!-- 视频预览 -->
+                                <block wx:if="{{videoURL.length > 0}}">
+                                    <view class="weui-uploader__file weui-uploader__file_ph" bindtap="previewVideo">
+                                        <video id="myVideo" class="weui-uploader__img" src="{{videoURL}}"></video>
+                                    </view>
+                                </block>
+                                <block wx:for="{{photos}}" wx:key="*this">
+                                    <view class="weui-uploader__file weui-uploader__file_ph" bindtap="previewImage" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                    </view>
+                                </block>
+                            </view>
+                        </view>
+                        <view class="weui-uploader__bd">
+                           <view class="weui-uploader__file weui-uploader__file_ph">
+                              <image class="weui-uploader__img" src="../../static/images/smbx_audio.png" bindtouchstart="startRecode" bindtouchend="endRecode"/>
+                            </view>
+                            <view class="weui-uploader__file weui-uploader__file_ph">
+                              <image class="weui-uploader__img" src="../../static/images/smbx_photo.png"  bindtap="chooseImageA"/>
+                            </view>
+                            <view class="weui-uploader__file weui-uploader__file_ph">
+                              <image class="weui-uploader__img" src="../../static/images/smbx_photograph.png" bindtap="chooseImageC"/>
+                            </view>
+                             <view class="weui-uploader__file weui-uploader__file_ph">
+                              <image class="weui-uploader__img" src="../../static/images/smbx_video.png"  bindtap='addVideo'/>
+                            </view>
+                        </view>
+                      </view>
+                    <!-- uploader end-->
+                     </view>
+                </view>
+                  <view class="kind-list__item">
+                     
+                </view>
+                   <view class="kind-list__item">
+                    <view id="{{item.id}}" class="weui-flex  kind-list__item-hd" bindtap="kindToggle">
+                        <view class="weui-flex__item">紧急程度</view>
+                        <view class="weui-cell__ft ">
+                          <button class="weui-btn mini-btn button-active" type="default" size="mini">一般</button>
+                          <button class="weui-btn mini-btn" type="default" size="mini">紧急</button>
+                          <button class="weui-btn mini-btn" type="default" size="mini">特急</button>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell">
+                      <view class="weui-cell__bd">报修设备</view>
+                       <view class="weui-cell__ft ">{{}}</view>
+                    </view>
+                    <view class="weui-cell">
+                      <view class="weui-cell__bd">报修型号</view>
+                       <view class="weui-cell__ft ">{{}}</view>
+                    </view>
+                </view>
+              <button class="weui-btn" type="primary" bindtap="repair" bindtap="subRepair">提交</button>
+            </block>
+        </view>
+    </view>
+</view>

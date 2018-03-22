@@ -1,0 +1,63 @@
+
+.containers{
+  width: 100vw;
+  height: 100vh;
+  /* padding: 0 15px; */
+  box-sizing: border-box;
+}
+
+.lis{
+  padding: 15rpx 15px;
+  border-bottom: 0.5rem solid #EEEEEE;
+	background-color: white;
+}
+
+.category{
+  width: 160rpx;
+	height: 160rpx;
+}
+.conb2{
+	width: calc(100% - 190rpx);
+	margin-left: 30rpx;
+}
+.txts{
+	line-height: 80rpx;
+}
+.font_weight{
+	font-weight: bold;
+}
+
+.red{
+  width: 160rpx;
+  /* text-align: right; */
+}
+
+.icon_wjx{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+
+.textarea{
+  width: calc(100% - 190rpx);
+  height: 200rpx;
+  border: 1px solid gainsboro;
+  padding: 20rpx;
+  box-sizing: border-box;
+  line-height: 40rpx
+}
+
+.btn{
+    width: 90%;
+    height: 80rpx;
+    margin-left: 5%;
+    text-align: center;
+    background-color: #189cf0;
+    color: #fff;
+    font-size: 16px;
+    line-height: 80rpx;
+    border:1px solid #189cf0;
+    border-radius: 40rpx;
+    margin-top: 60rpx;
+}

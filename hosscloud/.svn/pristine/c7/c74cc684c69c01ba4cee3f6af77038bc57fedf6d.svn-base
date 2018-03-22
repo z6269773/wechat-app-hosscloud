@@ -1,0 +1,27 @@
+ <view class='containers'>
+
+  <scroll-view scroll-y="true" bindscrolltolower="scrollLowerEvent" style='height:100%;'>
+
+    <view class='conts'>
+      <view class='ub'>
+        <view class='left'>报修通知</view><view class='right'>2018-01-03 18：03</view>
+      </view>
+      <text class='texts'>你于2017-01-03 18：00：00报修的【灯】灯坏了 项目已经维修完成。</text>
+    </view>
+    
+    <view class='conts'>
+      <view class='ub'>
+        <view class='left'>报修通知</view><view class='right'>2018-01-03 18：03</view>
+      </view>
+      <text class='texts'>你于2017-01-03 18：00：00报修的【灯】灯坏了 项目已经维修完成。</text>
+    </view>
+      
+
+    <view class="refresh-footer" wx:if="{{loadingMore}}">
+      <icon type="waiting" size="30" color="{{footerIconColor}}"  />
+    </view>
+
+  </scroll-view>
+  
+</view> 
+

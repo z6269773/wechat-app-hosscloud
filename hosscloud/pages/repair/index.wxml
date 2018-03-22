@@ -1,0 +1,13 @@
+<view class="containers">
+    <image class='logo' bindtap='scanCode' src='https://res.fuyitianjian.net/images/wxml/icon_SM.png'></image>
+
+    <view class='ub'>
+      <image class='icon_SP' src='https://res.fuyitianjian.net/images/wxml/icon_SP.png'></image>
+
+
+      <image class='icon_YY' src='https://res.fuyitianjian.net/images/wxml/icon_YY.png'></image>
+
+    </view>
+   
+     
+</view>

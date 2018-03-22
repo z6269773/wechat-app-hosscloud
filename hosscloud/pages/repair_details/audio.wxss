@@ -1,0 +1,8 @@
+audio{
+  position: absolute;
+  top: 40vh;
+  left: calc(50vw - 340rpx);
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}

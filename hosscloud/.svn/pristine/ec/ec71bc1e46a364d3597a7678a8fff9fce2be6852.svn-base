@@ -1,0 +1,351 @@
+/**app.wxss**/
+@import "weui-wxss/dist/style/weui.wxss";
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.ub {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: box;
+    position:relative;
+}
+/* zw add main.css*/
+page {
+  background-color: #EEE;
+}
+.page{
+  font-size: 15px;
+  color: #333;
+  background-color: #FFF;
+}
+.weui-cells {
+   font-size:15px;
+  }
+  .weui-bar__item_on{
+    color: #6494F6 !important;
+  }
+  button[type=primary] {
+  width: 98%;
+  height: 80rpx;
+  background-color: #6494F6 !important;
+  color: #fff;
+  font-size: 35rpx;
+  margin-bottom:20rpx; 
+}
+.weui-navbar__slider{
+  background-color: #6494F6 !important;
+}
+.weui-cells__swiper{
+  padding: 2px;
+}
+image {
+  width: 100%;
+  height: 100%;
+  display:inline-block;
+  overflow:hidden;
+}
+
+
+/*jcj样式  */
+.center_center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.hide-input {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #aaa;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #aaa;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #aaa;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+
+/*单行变成省略号*/
+
+.cutText {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+}
+
+
+/*两行变成省略号*/
+
+.cutText-2 {
+    text-overflow: ellipsis;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
+/*清除浮动*/
+
+.clearfix {
+    zoom: 1
+}
+
+.clearfix:after {
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    content: "";
+}
+
+
+/*
+ *input框 灰色
+ */
+
+input::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #999;
+}
+
+input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #999;
+}
+
+input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #999;
+}
+
+input:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #999;
+}
+
+
+/**
+ *     改变placeholder样式
+ */
+
+::-webkit-input-placeholder {
+    color: #262626;
+}
+
+::-moz-placeholder {
+    color: #262626;
+}
+
+::-ms-input-placeholder {
+    color: #262626;
+}
+
+
+/*浮动方式*/
+
+.ufl {
+    float: left !important;
+}
+
+.ufr {
+    float: right !important;
+}
+
+
+/*字体大小相对于1em=20px*/
+
+.ulev5 {
+    font-size: 1.5rem;
+}
+
+.ulev4 {
+    font-size: 1.4rem;
+}
+
+.ulev3 {
+    font-size: 1.3rem;
+}
+
+.ulev2 {
+    font-size: 1.2rem;
+}
+
+.ulev1 {
+    font-size: 1.1rem;
+}
+
+.ulev0 {
+    font-size: 1.0rem;
+}
+
+.ulev-1 {
+    font-size: 0.9rem;
+}
+
+.ulev-2 {
+    font-size: 0.8rem;
+}
+
+.ulev-25 {
+    font-size: 0.75rem;
+}
+
+.ulev-3 {
+    font-size: 0.7rem;
+}
+
+.ulev-4 {
+    font-size: 0.6rem;
+}
+
+
+/*对齐格式*/
+
+.tx-l {
+    text-align: left;
+}
+
+.tx-r {
+    text-align: right;
+}
+
+.tx-c {
+    text-align: center;
+}
+
+.uinn {
+    padding: 0.5rem;
+    margin: 0;
+}
+
+.uinn0 {
+    padding: 0 1rem;
+    margin: 0;
+}
+
+.uinn1 {
+    padding: 0 0.5rem;
+    margin: 0;
+}
+
+.uinn2 {
+    padding: 0.5rem 1rem;
+    margin: 0;
+}
+
+.uinn3 {
+    padding: 0.2rem;
+    margin: 0;
+}
+
+.uinn4 {
+    padding: 0 0.2rem;
+    margin: 0;
+}
+
+.uinn5 {
+    padding: 0.75rem 0.5rem;
+    margin: 0;
+}
+
+.border-bottom {
+    border-bottom: 2px solid #6494F6;
+}
+
+
+.color {
+    color: #6494f6 !important;
+}
+
+.color-red {
+    color: #f23030 !important;
+}
+
+.color-yellow {
+    color: #f7ac0a !important;
+}
+
+.color-427 {
+    color: #427bff !important;
+}
+
+.color-666 {
+    color: #666666 !important;
+}
+
+.color-333 {
+    color: #333 !important;
+}
+
+.color-00b3ff {
+    color: #00b3ff !important;
+}
+
+.color-ff8a01 {
+    color: #ff8a01 !important;
+}
+
+.color-aaa {
+    color: #AAAAAA !important;
+}
+
+.bg-eee {
+    background-color: #EEEEEE;
+}
+
+.bg-6494f6 {
+    background-color: #6494f6;
+}
+
+.bg-e6cbb0 {
+    background-color: #e6cbb0 !important;
+}
+
+.bg-af763d {
+    background-color: #af763d !important;
+}
+
+.bg-6494f6 {
+    background-color: #6494f6 !important;
+}

@@ -1,0 +1,66 @@
+
+.containers{
+  width: 100vw;
+  height: 100vh;
+   /* padding: 0 15px;  */
+  box-sizing: border-box;
+}
+
+
+
+
+.status_img{
+	width: 28rpx;
+	height: 28rpx;
+}
+.status_img_xiao{
+  width: 28rpx;
+  height: 24rpx;
+}
+
+
+.jiange{
+  width: 750rpx;
+	height: 0.5rem;
+	border-bottom: 1px solid gainsboro;
+}
+
+
+.status_img_jiantou{
+  display: block;
+  width: 40rpx;
+  height:40rpx;
+  margin-top: 24rpx;
+}
+
+
+.content5{
+	width: 100%;
+	padding: 0.7rem 0 0.7rem 0.5rem;
+	background-color: white;
+  box-sizing: border-box;
+}
+.ct5l{
+	width: 10%;
+	text-align: center;
+	position: relative;
+}
+.ct5l image{
+	margin-top: 5rpx;
+}
+.ct5l p{
+	width: 2px;
+	height: 88rpx;
+	position: absolute;
+	top: 24rpx;
+	left: calc(50% - 1px);
+}
+
+.ct5r {
+	width: 86%;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid gainsboro;
+}
+.ct5r span {
+	line-height: 40rpx;
+}

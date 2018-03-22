@@ -1,0 +1,22 @@
+{
+  "pages":[
+    "pages/device_detail/index",
+    "pages/index/index",
+    "pages/login/login",
+    "pages/score/index",
+    "pages/b_repair_details/index",
+    "pages/complaint/index",
+ 
+    "pages/evaluate/index",
+    "pages/repair_details/index",
+    "pages/repair_task/index",
+    "pages/select_device/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "云医馆",
+    "navigationBarTextStyle":"black"
+  }
+}

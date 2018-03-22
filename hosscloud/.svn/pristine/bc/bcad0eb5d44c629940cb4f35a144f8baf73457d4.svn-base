@@ -1,0 +1,40 @@
+<!-- 扫房间，选设备 -->
+<view class="page">
+      <view class="weui-flex  kind-list_address">
+           <view class="weui-flex__item">报修位置</view>
+           <view class="weui-cell__ft">{{buildingName}}</view>
+       </view>
+    <view class="page__bd page__bd_spacing">
+        <view class="kind-list">
+            <block>
+                <view class="kind-list__item">
+                          <view id="{{item.id}}" class="weui-flex  kind-list__item-hd" bindtap="kindToggle">
+                              <view class="weui-flex__item">报修项目</view>
+                              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                          </view>
+                      </view>
+                  <view class="kind-list__item">
+                    <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell">
+                        <view class="weui-cell__bd">
+                            <textarea class="weui-textarea" placeholder="描述设备故障情况" style="height: 3.3em" />
+                        </view>
+                    </view>
+                    </view>
+                  </view>
+                <view class="kind-list__item">
+                    <view id="{{item.id}}" class="weui-flex  kind-list__item-hd" bindtap="kindToggle">
+                        <view class="weui-flex__item">报修设备</view>
+                        <view class="weui-cell__ft "></view>
+                    </view>
+                </view>
+                <view class="kind-list__item">
+                    <view id="{{item.id}}" class="weui-flex  kind-list__item-hd" bindtap="kindToggle">
+                        <view class="weui-flex__item">报修型号</view>
+                        <view class="weui-cell__ft"></view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

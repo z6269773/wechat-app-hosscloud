@@ -1,0 +1,53 @@
+ <view class='containers'>
+
+  <scroll-view scroll-y="true" bindscrolltolower="scrollLowerEvent" bindscrolltoupper="refesh" style='height:100%;'>
+
+    
+    <view class='lis {{item.id == iid?"display_none":""}}' wx:for="{{list}}" wx:for-item="item" data-id="{{item.id}}" wx:key="item.id">
+    
+      <view class='ub conb ulev-4' data-id='{{item.id}}' bindtap='toDetail'>
+        <view class='stasus_stasus {{item.status > 1?"color-00b3ff":"color-ff8a01"}}' >{{item.statusName}}</view>
+        <image class='category' src='{{item.repairUrl}}'></image>
+        <view class='conb2'>
+          <view class='txts padding_left3 color-666 cutText'>{{item.createDt}}</view>
+          <view class='txts font_weight ulev-3 cutText'>{{item.projectName}}</view>
+          <view class='txts color-666 cutText-2'>{{item.location}}</view>
+        </view>
+      </view>
+
+      <view class='ub'>
+        <view class='stasus ulev-3 {{item.lavel==1?"color-666":(item.lavel==2?"color-yellow":"color-red")}}'>{{item.lavel==1?'一般':(item.lavel==2?'紧急':'特急')}}</view>
+        <!-- <view class='stasus ulev-3' wx:if="{{item.lavel == 1}}">一般</view>
+        <view class='stasus ulev-3 color-yellow' wx:if="{{item.lavel == 2}}">紧急</view>
+        <view class='stasus ulev-3 color-red' wx:if="{{item.lavel == 3}}">特急</view> -->
+
+        <view class='clearfix con2' wx:if="{{item.status == 0}}">
+          <button class="ufr" data-index='{{index}}' id='{{item.id}}' data-orderNo='{{item.orderNo}}' bindtap='reMove'>删除报修</button>
+          <button class="ufr" data-id='{{item.id}}' data-repairUrl='{{item.repairUrl}}' data-orderNo='{{item.orderNo}}' data-projectName='{{item.projectName}}' data-createDt='{{item.createDt}}' bindtap='toEvaluate'>投诉</button>
+        </view>
+        <view class='clearfix con2' wx:if="{{item.status == 1}}">
+          <button class="ufr" data-index='{{index}}' id='{{item.id}}' data-orderNo='{{item.orderNo}}' bindtap='reMove1'>取消报修</button>
+          <button class="ufr" data-id='{{item.id}}' data-repairUrl='{{item.repairUrl}}' data-orderNo='{{item.orderNo}}' data-projectName='{{item.projectName}}' data-createDt='{{item.createDt}}' bindtap='toEvaluate'>投诉</button>
+        </view>
+        <view class='clearfix con2' wx:if="{{item.status == 2}}">
+          <button class="ufr" data-id='{{item.id}}' data-repairUrl='{{item.repairUrl}}' data-orderNo='{{item.orderNo}}' data-projectName='{{item.projectName}}' data-createDt='{{item.createDt}}' bindtap='toEvaluate'>投诉</button>
+        </view>
+        <view class='clearfix con2' wx:if="{{item.status == 3}}">
+          <button class="ufr" data-id='{{item.id}}' data-repairUrl='{{item.repairUrl}}' data-orderNo='{{item.orderNo}}' data-projectName='{{item.projectName}}' data-createDt='{{item.createDt}}' bindtap='toEvaluate'>投诉</button>
+          <button class="ufr" data-id='{{item.id}}' data-repairUrl='{{item.repairUrl}}' data-orderNo='{{item.orderNo}}' data-projectName='{{item.projectName}}' data-createDt='{{item.createDt}}' bindtap='toScore'>评价</button>
+        </view>
+      </view>
+    </view>  
+
+    <view class="refresh-footer" wx:if="{{loadingMore}}">
+      <icon type="waiting" size="30" color="{{footerIconColor}}"  />
+    </view>
+
+    <view class="refresh-footer" wx:if="{{loadingMorerow}}">
+      <text>没有更多的订单了！！！！</text>
+    </view>
+
+  </scroll-view>
+  
+</view> 
+

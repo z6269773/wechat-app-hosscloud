@@ -1,0 +1,17 @@
+page{
+    background-color: #FFFFFF;
+}
+.icon_success{
+  width: 186rpx;
+  height: 186rpx;
+  margin: 0 auto;
+}
+.weui-msg__title{
+  color: rgb(100, 246, 107);
+}
+image {
+  width: 100%;
+  height: 100%;
+  display:inline-block;
+  overflow:hidden;
+}

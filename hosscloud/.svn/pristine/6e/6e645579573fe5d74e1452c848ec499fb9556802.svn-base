@@ -1,0 +1,31 @@
+//index.js
+//获取应用实例
+const app = getApp()
+
+Page({
+  data: {
+    repairurl: null,
+    orderno: null,
+    projectname: null,
+    createdt: null,
+    descs: null
+  },
+  
+  onLoad: function () {
+    // console.log(app.globalData.userInfo)
+    
+    this.setData({
+      repairurl: wx.getStorageSync('repairurl'),
+      orderno: wx.getStorageSync('orderno'),
+      projectname: wx.getStorageSync('projectname'),
+      createdt: wx.getStorageSync('createdt')
+    })
+  },
+  onReady: function(){
+    // wx.navigateBack({ changed: true }); //返回上一页
+  },
+  searchdescs: function (e) {
+    console.log(e.detail.value)
+    this.setData({ descs: e.detail.value });
+  }
+})

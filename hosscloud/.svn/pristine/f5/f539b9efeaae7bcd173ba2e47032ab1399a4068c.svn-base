@@ -1,0 +1,10 @@
+<!-- 扫房间，选设备 -->
+<view class="page">
+    <view class="page__bd ">
+       <image class='image_bg' src='../../../static/images/IMG_boduan.png'></image>
+       <view>
+          <view class='lable_bg'>{{curTimeVal}}</view>
+          <button class='button_bg' bindtouchstart="touchdown" bindtouchend="touchup"></button>
+       </view>
+    </view>
+</view>

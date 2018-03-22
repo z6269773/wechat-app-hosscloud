@@ -1,0 +1,10 @@
+<view class="containers" style="background: url(./images/img_beijing.png);">
+  <image class='logo' src='./images/img_logo.png'></image>
+
+   <view class="search-container"> 
+    <image class='shouji' src='./images/icon_shouji.png'></image>手机号：<input type="text" placeholder="输入书名搜索"></input>
+   </view> 
+   <view class="search-container"> 
+    <image class='mima' src='./images/icon_mima.png'></image>密码：<input type="text" placeholder="输入书名搜索"></input>
+   </view> 
+</view>

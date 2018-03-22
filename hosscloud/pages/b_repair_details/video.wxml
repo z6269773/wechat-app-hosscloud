@@ -1,0 +1,4 @@
+<view>
+  <video src="{{url}}" controls ></video>
+
+</view>

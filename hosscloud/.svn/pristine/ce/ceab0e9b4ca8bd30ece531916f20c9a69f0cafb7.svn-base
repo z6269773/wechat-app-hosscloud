@@ -1,0 +1,67 @@
+<!--index.wxml-->
+<view class="containers">
+  <view class='lis'>
+    <view class='ub conb ulev-4'>
+      <image class='category' src='https://res.fuyitianjian.net/images/img_dian.png'></image>
+      <view class='conb2'>
+        <view class='txts font_weight ulev-3 cutText'>【灯】灯不亮了</view>
+        <view class='txts color-666 cutText-2'>2017-08-25 12：15：12</view>
+      </view>
+    </view>
+  
+  </view>
+
+  <view class='lis'>
+    
+    <view class='ub conb ulev-4'>
+      <view class='red'>维修及时：</view>
+      <view>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx.png'></image>
+      </view>
+    </view>
+    <view class='ub conb ulev-4'>
+      <view class='red'>服务态度：</view>
+      <view>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx.png'></image>
+      </view>
+    </view>
+    <view class='ub conb ulev-4'>
+      <view class='red'>维修质量：</view>
+      <view>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx.png'></image>
+      </view>
+    </view>
+    <view class='ub conb ulev-4'>
+      <view class='red'>维修频率：</view>
+      <view>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx.png'></image>
+      </view>
+    </view>
+
+
+    <view class='ub conb ulev-4'>
+      <view class='red'>评价建议：</view>
+      <textarea class='textarea' placeholder='请给工人评价，不少于6个字'></textarea>
+    </view>
+  
+  </view>
+
+  <button class='btn'>提交</button>
+   
+</view>

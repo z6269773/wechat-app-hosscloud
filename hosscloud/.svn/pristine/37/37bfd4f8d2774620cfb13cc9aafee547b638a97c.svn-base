@@ -1,0 +1,144 @@
+//路径根据自己项目路径修改
+var network = require("../../api.js")
+
+Page({
+  data: {
+      photos:[],
+      audioURL:[],
+      videoURL:[]
+  },
+  onReady: function (res) {
+    this.videoContext = wx.createVideoContext('myVideo')
+  },
+  startRecode: function () {//开始录音
+    var s = this;
+    console.log("start");
+    wx.startRecord({
+      success: function (res) {
+        console.log(res);
+        var tempFilePath = res.tempFilePath;
+        s.setData({ recodePath: tempFilePath, isRecode: true });
+      },
+      fail: function (res) {
+        console.log("失败");
+        console.log(res);
+        //录音失败
+      }
+    });
+  },
+  endRecode: function () {//结束录音 
+    var s = this;
+    console.log("end");
+    wx.stopRecord();
+    s.setData({ isRecode: false });
+
+
+    wx.showToast();
+    setTimeout(function () {
+      var urls = network.api.uploadFile;
+      console.log(s.data.recodePath);
+      wx.uploadFile({
+        url: urls,
+        filePath: s.data.recodePath,
+        name: 'file',
+        header: {
+          'content-type': 'multipart/form-data'
+        },
+        success: function (res) {
+          var str = res.data;
+          var data = JSON.parse(str);
+          if (data.states == 1) {
+            var cEditData = s.data.editData;
+            cEditData.recodeIdentity = data.identitys;
+            s.setData({ editData: cEditData });
+          }
+          else {
+            wx.showModal({
+              title: '提示',
+              content: data.message,
+              showCancel: false,
+              success: function (res) {
+
+              }
+            });
+          }
+          wx.hideToast();
+        },
+        fail: function (res) {
+          console.log(res);
+          wx.showModal({
+            title: '提示',
+            content: "网络请求失败，请确保网络是否正常",
+            showCancel: false,
+            success: function (res) {
+
+            }
+          });
+          wx.hideToast();
+        }
+      });
+    }, 1000)
+
+  },
+  chooseImageA: function (e) {
+    var that = this;
+    wx.chooseImage({
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        that.setData({
+          photos: that.data.photos.concat(res.tempFilePaths)
+        });
+      }
+    })
+  },
+  chooseImageC: function (e) {
+    var that = this;
+    wx.chooseImage({
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        that.setData({
+          photos: that.data.photos.concat(res.tempFilePaths)
+        });
+      }
+    })
+  },
+  previewImage: function (e) {
+    wx.previewImage({
+      current: e.currentTarget.id, // 当前显示图片的http链接
+      urls: this.data.photos // 需要预览的图片http链接列表
+    })
+  },
+  previewVideo: function (e) {
+    console.log('play')
+    this.videoContext.play();
+    this.videoContext.requestFullScreen();
+    console.log('play end')
+  },
+  // addVideo
+  addVideo: function () {
+    var that = this
+    wx.chooseVideo({
+      sourceType: ['camera'],
+      maxDuration: 60,
+      camera: 'back',
+      success: function (res) {
+        that.setData({
+          videoURL: res.tempFilePath,
+          size: (res.size / (1024 * 1024)).toFixed(2)
+        })
+      }
+    })
+  },
+  subRepair: function (e){
+    console.log("提交报修")
+    wx.redirectTo({
+      url: '../msg/index'
+    })
+  }
+  
+});
+

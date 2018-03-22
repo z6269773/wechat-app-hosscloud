@@ -1,0 +1,87 @@
+<!--index.wxml-->
+<view class="containers">
+  
+  <view class="bg-eee jiange"></view>
+  <view class="content2">
+    <view class="cont3 clearfix ulev-3">
+      <span class="ufl">维修单号</span>
+      <span id="repairNo" class="ufr color-aaa cutText-2">{{repairno}}</span>
+    </view>
+    <view class="cont3 clearfix ulev-3">
+      <span class="ufl">维修状态</span>
+      <span id="repairStatusName" class="ufr cutText-2">{{repairstatusname}}</span>
+    </view>
+  </view>
+  
+
+  <view wx:for="{{serviceDetail}}" wx:for-item="item" data-dispatchNo="{{item.dispatchNo}}" wx:key="item.dispatchNo">
+    <view class="bg-eee jiange"></view>
+    <view class="content2">
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">派工单号</span>
+        <span class="ufr color-aaa cutText-2">{{item.dispatchNo}}</span>
+      </view>
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">维修项目</span>
+        <span class="ufr color-aaa cutText-2">{{item.projectName}}</span>
+      </view>
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">维修说明</span>
+        <span class="ufr color-aaa cutText-2">{{item.descs}}</span>
+      </view>
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">维修费用</span>
+        <span class="ufr color-aaa cutText-2">{{item.repiarPrice}}</span>
+      </view>
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">派工时间</span>
+        <span class="ufr color-aaa cutText-2">{{item.createDt}}</span>
+      </view>
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">接单时间</span>
+        <span class="ufr color-aaa cutText-2">{{item.acceptTime}}</span>
+      </view>
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">完工时间</span>
+        <span class="ufr color-aaa cutText-2">{{item.completeTime}}</span>
+      </view>
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">维修人员</span>
+        <span class="ufr color-aaa cutText-2">{{item.worker}}</span>
+      </view>
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">维修附件</span>
+      </view>
+      <view class="cont3 clearfix ulev-3 uinn1">
+        <block wx:for="{{item.uploadList}}" wx:for-item="item3" wx:key="item3.id">
+            <image class="ufl" wx:if="{{item3.type == 'image'}}" data-url='{{item3.url}}' bindtap='toimage' src="{{item3.url}}"></image>
+            <image class="ufl" wx:if="{{item3.type == 'audio'}}" data-url='{{item3.url}}' bindtap='toaudio' src="https://res.fuyitianjian.net/images/wxml/img_yinpinbf.png"></image>
+            <image class="ufl" wx:if="{{item3.type == 'video'}}" data-url='{{item3.url}}' bindtap='tovideo' src="https://res.fuyitianjian.net/images/wxml/img_shipinbf.png"></image>
+        </block >
+      </view>
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">维修设备</span>
+        <span class="ufr color-aaa cutText-2">{{item.macName}}</span>
+      </view>
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">工单用料</span>
+        <!-- <span><image class='ufr status_img_jiantou' src="https://res.fuyitianjian.net/images/wxml/icon_jiantou.png"/></span>
+        <span class="ufr color-aaa cutText-2">22元</span> -->
+      </view>
+      <view class="cont3 clearfix ulev-3" wx:for="{{item.materialList}}" wx:for-item="item2" wx:key="item.brand">
+        <span class="ufl color-aaa marginleft2 cutText-1">{{item2.brand}}</span>
+        <span class="ufr color-aaa marginleft">{{item2.moneny}}</span>
+        <span class="ufr color-aaa marginleft">×{{item2.qty}}</span>
+        
+      </view>
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">院方签字</span>
+        <span class="ufr color-aaa cutText-2"><image class="qianzi" src="{{item.signUrl}}"></image></span>
+      </view>
+    </view>
+
+  </view>
+  
+
+   
+</view>

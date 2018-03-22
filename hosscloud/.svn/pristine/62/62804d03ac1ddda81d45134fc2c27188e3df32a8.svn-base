@@ -1,0 +1,86 @@
+{
+  "pages":[
+
+    
+
+    "pages/repair/index",
+ 
+    "pages/login/login",
+
+    "pages/myrepair/index",
+
+    "pages/msg/index",
+
+    "pages/b_repair_gj/index",
+
+    "pages/complaint/index",
+
+    "pages/repair_details/index",
+    "pages/repair_details/video",
+    "pages/repair_details/audio",
+    "pages/repair_details/image",
+
+    "pages/b_repair_details/index",
+    "pages/b_repair_details/video",
+    "pages/b_repair_details/audio",
+    "pages/b_repair_details/image",
+    
+    "pages/score/index",
+
+    "pages/evaluate/index",
+    
+
+    "pages/index/index",
+    "pages/device_detail/index",
+    
+    
+
+    
+    
+    
+    "pages/messageCenter/messageCenter",
+ 
+    
+    
+    "pages/repair_task/index",
+    "pages/select_device/index",
+    "pages/logs/logs",
+
+    "pages/signout/signout"
+    
+  ],
+  "window":{
+    "navigationBarTextStyle": "#FFF",
+    "backgroundTextStyle": "#FFF",
+    "navigationBarTitleText": "云医馆",
+    "navigationBarBackgroundColor": "#6494F6",
+    "backgroundColor": "#EEEEEE",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "red",
+    "borderStyle":"white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/repair/index",
+        "text":"首页",
+        "iconPath": "images/icon_SY.png",
+        "selectedIconPath": "images/icon_SY.png"
+      },
+      {
+        "pagePath": "pages/myrepair/index",
+        "text": "订单",
+        "iconPath": "images/icon_DD.png",
+        "selectedIconPath": "images/icon_DD.png"
+      },
+      {
+        "pagePath": "pages/messageCenter/messageCenter",
+        "text": "我的",
+        "iconPath": "images/icon_WD.png",
+        "selectedIconPath": "images/icon_WD.png"
+      }
+    ]
+  }
+}

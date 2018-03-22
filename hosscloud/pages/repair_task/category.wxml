@@ -1,0 +1,16 @@
+<!-- 扫房间，选设备 -->
+<view class="page">
+    <view class="page__bd page__bd_spacing">
+     <!-- 选择报修项目 -->
+        <view class="weui-cells weui-cells_after-title">
+         <block wx:for="{{repairProject}}" wx:key="*this" id="{{item.value}}">
+           <block wx:if="{{item.value == categoryID}}">
+            <view class="weui-cell" wx:for="{{item.nodes}}" wx:key="*this" id="{{item.value}}" data-category="{{item.text}}" bindtap='selectCategory'>
+                <view class="weui-cell__bd {{defaultNO==index ? 'weui-cell_bd_active' : ''}}" id="{{index}}">{{item.text}}</view>
+            </view>
+          </block> 
+        </block>
+        </view>
+    </view>
+</view>
+<button class="weui-btn" type="primary" bindtap="submitCategory">提交</button>

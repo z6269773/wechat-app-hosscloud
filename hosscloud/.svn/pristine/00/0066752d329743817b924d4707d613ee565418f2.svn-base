@@ -1,0 +1,35 @@
+{
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "报修",
+    "navigationBarTextStyle": "#000",
+    "navigationBarBackgroundColor": "#e85353"
+  },
+  "tabBar": {
+    "color": "#e85353",
+    "selectedColor": "#fff",
+    "backgroundColor": "#e85353",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "https://res.fuyitianjian.net/images/wxml/icon_shouji.png",
+        "selectedIconPath": "https://res.fuyitianjian.net/images/wxml/icon_shouji.png"
+      },
+      {
+        "pagePath": "pages/classify/index",
+        "iconPath": "images/list.png",
+        "selectedIconPath": "images/list_n.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "iconPath": "images/cart.png",
+        "selectedIconPath": "images/cart_n.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me_n.png"
+      }
+    ]
+  }
+}

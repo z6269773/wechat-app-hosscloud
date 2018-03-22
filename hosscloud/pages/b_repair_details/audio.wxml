@@ -1,0 +1,3 @@
+<view>
+  <audio poster="{{poster}}" src="{{url}}" controls loop></audio>
+</view>

@@ -1,0 +1,25 @@
+<!-- 扫房间，选设备 -->
+<view class="page">
+    <view class="page__bd page__bd_spacing">
+        <view class="kind-list">
+            <block wx:for="{{list}}" wx:key="value">
+                <view class="kind-list__item" bindtap='okRepair' data-project="【{{item.text}}】">
+                    <view id="{{item.value}}" class="weui-flex  kind-list__item-hd  {{item.selectable ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+                        <view class="weui-flex__item">{{item.text}}</view>
+                        <view class="weui-cell__ft weui-cell__ft_in-access {{item.selectable ? 'weui-cell__ft_in-access_show' : ''}}"></view>
+                    </view>
+                    <view class="kind-list__item-bd {{item.selectable ? 'kind-list__item-bd_show' : ''}}">
+                        <view class="weui-cells {{item.selectable ? 'weui-cells_show' : ''}}">
+                            <block wx:for="{{item.nodes}}" wx:for-item="page" wx:key="page.value">
+                                <view id="{{page.value}}"  class="weui-cell weui-cell_access" bindtap='selectCategory' data-category="{{page.text}}">
+                                    <view class="weui-cell__bd">{{page.text}}</view>
+                                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

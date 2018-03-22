@@ -1,0 +1,148 @@
+<!--index.wxml-->
+<view class="containers">
+  
+  <view class="content4 ub">
+    <view class="ct4 ulev-3">
+      <view>待调度</view>
+      <view><image class='status_img' src='https://res.fuyitianjian.net/images/wxml/icon_dui_h.png'></image></view>
+      <view class="ulev-4">{{content.createDt}}</view>
+      <!-- <view class="ulev-4">2017.12.02</view> -->
+      <p class="{{content.status > 0 ?'bg-af763d':'bg-e6cbb0'}}"></p>
+    </view>
+    <view class="ct4 ulev-3 {{content.status > 0 ?'':'color-aaa'}}">
+      <view>已调度</view>
+      <view><image class='status_img' src='https://res.fuyitianjian.net/images/wxml/icon_ing_h.png'></image></view>
+      <view class="ulev-4">{{content.schedulDate}}</view>
+      <!-- <view class="ulev-4">2017.12.02</view> -->
+      <p class="{{content.status > 1 ?'bg-af763d':'bg-e6cbb0'}}"></p>
+    </view>
+    <view class="ct4 ulev-3 {{content.status > 0 ?'':'color-aaa'}}">
+      <view>维修中</view>
+      <view><image class='status_img_xiao' src='https://res.fuyitianjian.net/images/wxml/icon_xiao_h.png'></image></view>
+      <view class="ulev-4">{{content.accecpDt}}</view>
+      <!-- <view class="ulev-4">2017.12.02</view> -->
+      <p class="{{content.status > 2 ?'bg-af763d':'bg-e6cbb0'}}"></p>
+    </view>
+    <view class="ct4 ulev-3 {{content.status > 0 ?'':'color-aaa'}}">
+      <view>已完成</view>
+      <view><image class='status_img_xiao' src='https://res.fuyitianjian.net/images/wxml/icon_xiao_h.png'></image></view>
+      <view class="ulev-4">{{content.completDt}}</view>
+      <!-- <view class="ulev-4">2017.12.02</view> -->
+      <p class="{{content.status > 3 ?'bg-af763d':'bg-e6cbb0'}}"></p>
+    </view>
+    <view class="ct4 ulev-3 {{content.status > 0 ?'':'color-aaa'}}">
+      <view>待评价</view>
+      <view><image class='status_img_xiao' src='https://res.fuyitianjian.net/images/wxml/icon_xiao_h.png'></image></view>
+      <view class="ulev-4">{{content.endTime}}</view>
+      <!-- <view class="ulev-4">2017.12.02</view> -->
+    </view>
+  </view>
+  
+
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="id">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="150"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+
+
+
+
+  <view class="ub cont" style='margin-top:10rpx;'>
+		<view class="ub cont1 cont12"><image src="https://res.fuyitianjian.net/images/wxml/icon_shijian.png"></image><span class="ulev-3">已经等待<b id="waitTime">{{content.waitTime}}</b></span></view>
+		<!--<span class="span1 tx-c"><img src="../../../static/images/img_cs.png"/></span>-->
+		<span class="span2 tx-c {{content.lavel==1?'color-666':(content.lavel==2?'color-yellow':'color-red')}}">{{content.lavel==1?'一般':(content.lavel==2?'紧急':'特急')}}</span>
+	</view>
+
+
+
+  <view class="content2">
+    <view class="cont3 clearfix ulev-3">
+      <span class="ufl">报修时间</span>
+      <span class="ufr color-aaa cutText-2">{{content.createDt}}</span>
+    </view>
+    <!-- <view class="cont3 clearfix ulev-3">
+      <span class="ufl">报修单号</span>
+      <span class="ufr color-aaa cutText-2">BX20171202006</span>
+    </view> -->
+    <view class="cont3 clearfix ulev-3">
+      <span class="ufl">报修项目</span>
+      <span class="ufr color-aaa cutText-2">{{content.projectName}}</span>
+    </view>
+    <view class="cont3 clearfix ulev-3">
+      <span class="ufl">故障描述</span>
+      <span class="ufr color-aaa cutText-2">{{content.descs}}</span>
+    </view>
+    <view class="cont3 clearfix ulev-3">
+      <span class="ufl">报修位置</span>
+      <span class="ufr color-aaa cutText-2">{{content.location}}</span>
+    </view>
+    <view class="cont3 clearfix ulev-3">
+      <span class="ufl">报修人员</span>
+      <span class="ufr color-aaa cutText-2">{{content.userName+content.userMobile}}</span>
+    </view>
+  </view>
+
+  <view class="bg-eee jiange"></view>
+
+
+  <view class="content2">
+    <view class="cont3 clearfix ulev-3">
+      <span class="ufl">报修设备</span>
+      <span class="ufr color-aaa cutText-2">{{content.macName}}</span>
+    </view>
+    <view class="cont3 clearfix ulev-3">
+      <span class="ufl">报修型号</span>
+      <span class="ufr color-aaa cutText-2">{{content.modelNum}}</span>
+    </view>
+  </view>
+
+  <view class="bg-eee jiange"></view>
+
+  <view class="content2">
+    <view class="cont3 clearfix ulev-3" wx:if="{{content.repairNo}}">
+      <span class="ufl">维修详情</span>
+      <span bindtap='toRepair_details' data-repairNo="{{content.repairNo}}" data-repairStatusName="{{content.repairStatusName}}"><image class='ufr status_img_jiantou' src="https://res.fuyitianjian.net/images/wxml/icon_jiantou.png"/></span>
+      <span class="ufr color-aaa cutText-2" data-repairNo="{{content.repairNo}}" data-repairStatusName="{{content.repairStatusName}}" bindtap='toRepair_details'>{{content.repairStatusName}}</span>
+    </view>
+    <!-- <view class="cont3 clearfix ulev-3">
+      <span class="ufl">工单轨迹</span>
+      <span bindtap='tob_repair_gj'><image class='ufr status_img_jiantou' src="https://res.fuyitianjian.net/images/wxml/icon_jiantou.png"/></span>
+      <span class="ufr color-aaa cutText-2" bindtap='tob_repair_gj'>WX20171202006(维修中)</span>
+    </view> -->
+    <view class="cont3 clearfix ulev-3" wx:if="{{content.isPointOrSue}}">
+      <span class="ufl">服务评价</span>
+      <span bindtap='toScoreend'><image class='ufr status_img_jiantou' src="https://res.fuyitianjian.net/images/wxml/icon_jiantou.png"/></span>
+      <span class="ufr color-aaa cutText-2" bindtap='toScoreend'>{{content.point}}分</span>
+    </view>
+  </view>
+
+
+  <!-- <view class='ub btns'>
+    <button class='btnn' bindtap='toEvaluate'>投诉</button>
+    <button class='btnn' bindtap='toScore'>取消报修</button> 
+  </view> -->
+ <view class='ub btns' wx:if="{{content.status == 0}}">
+      <button class="btnn" data-id='{{content.id}}' data-orderNo='{{content.orderNo}}' bindtap='reMove'>删除报修</button>
+      <button class="btnn" data-id='{{content.id}}' data-repairUrl='{{content.repairUrl}}' data-orderNo='{{content.orderNo}}' data-projectName='{{content.projectName}}' data-createDt='{{content.createDt}}' bindtap='toEvaluate'>投诉</button>
+  </view>
+  <view class='ub btns' wx:if="{{content.status == 1}}">
+      <button class="btnn" data-id='{{content.id}}' data-orderNo='{{content.orderNo}}' bindtap='reMove1'>取消报修</button>
+      <button class="btnn" data-id='{{content.id}}' data-repairUrl='{{content.repairUrl}}' data-orderNo='{{content.orderNo}}' data-projectName='{{content.projectName}}' data-createDt='{{content.createDt}}' bindtap='toEvaluate'>投诉</button>
+  </view>
+  <view class='ub btns' wx:if="{{content.status == 2}}">
+      <button class="btnn" data-id='{{content.id}}' data-repairUrl='{{content.repairUrl}}' data-orderNo='{{content.orderNo}}' data-projectName='{{content.projectName}}' data-createDt='{{content.createDt}}' bindtap='toEvaluate'>投诉</button>
+  </view>
+  <view class='ub btns' wx:if="{{content.status == 3}}">
+      <button class="btnn" data-id='{{content.id}}' data-repairUrl='{{content.repairUrl}}' data-orderNo='{{content.orderNo}}' data-projectName='{{content.projectName}}' data-createDt='{{content.createDt}}' bindtap='toEvaluate'>投诉</button>
+      <button class="btnn" data-id='{{content.id}}' data-repairUrl='{{content.repairUrl}}' data-orderNo='{{content.orderNo}}' data-projectName='{{content.projectName}}' data-createDt='{{content.createDt}}' bindtap='toScore'>评价</button>
+  </view>
+  
+  <view class='ub btns' wx:if="{{content.status == 4}}">
+
+  </view>
+   
+</view>

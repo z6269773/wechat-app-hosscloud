@@ -1,0 +1,3 @@
+<view class="container" style="background: url(./images/img_beijing.png);">
+  <image src='./images/img_logo.png'></image>
+</view>

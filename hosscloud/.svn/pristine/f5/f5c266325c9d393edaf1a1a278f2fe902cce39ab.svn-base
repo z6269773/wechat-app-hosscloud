@@ -1,0 +1,33 @@
+
+const app = getApp();
+var api = require('../../api.js');
+var aes = require('../../static/aes/aesUtil.js');
+
+Page({
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    arr: [1, 2, 3, 4, 5],
+    index1: 4,
+    index2: 4,
+    index3: 4,
+    index4: 4,
+    repairurl: null,
+    orderno: null,
+    projectname: null,
+    createdt: null,
+    descs: null,
+  },
+  onLoad: function(e){
+    this.setData({
+      repairurl: wx.getStorageSync('repairurl'),
+      orderno: wx.getStorageSync('orderno'),
+      projectname: wx.getStorageSync('projectname'),
+      createdt: wx.getStorageSync('createdt')
+    })
+  },
+  toEvaluate: function (e) {
+    console.log(111)
+  }
+})

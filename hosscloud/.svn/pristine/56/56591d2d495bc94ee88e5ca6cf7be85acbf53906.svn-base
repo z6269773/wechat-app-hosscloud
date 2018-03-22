@@ -1,0 +1,45 @@
+//路径根据自己项目路径修改
+var ias = require("../../api.js")
+var aes = require("../../static/aes/aesUtil.js");
+
+Page({
+  data: {
+    hiddenVideo: false,
+    photos:[],
+    audioURL: null,
+    videoURL: null,
+    repairProject: null,
+    repairLevel:null
+  
+  },
+  onLoad: function (options) {
+    this.setData({
+      repairProject:wx.getStorageSync('repairProject')
+    })
+  },
+  /**
+   * init 初始化函数
+   */
+  onReady: function (res) {
+    // this.getRepairProject();
+  },
+  /**
+  * 选择项目
+  */
+  okRepair: function (e) {
+    console.log("ok")
+    wx.setStorageSync('project', e.currentTarget.dataset.project)
+    wx.redirectTo({
+      url: './category?id=' + e.currentTarget.id
+    })
+  },
+  /**
+   * 取消选择项目
+   */
+  cancelRepair: function (e){
+    console.log("cancel")
+    wx.navigateBack({ changed: true }); 
+  }
+  
+});
+

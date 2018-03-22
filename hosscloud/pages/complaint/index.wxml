@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class="containers">
+  
+  <view class="content2">
+    <view class="cont3 clearfix ulev-3">
+      <span class="ufl">总体平分</span>
+      <span class="ufr color-aaa cutText-2">{{pointDetail.point}}分</span>
+    </view>
+    <view class="cont3 cont31 clearfix ulev-3">
+      <span class="ufl color-aaa">维修及时</span>
+      <span class="ufr color-aaa cutText-2">{{pointDetail.repairScore}}分</span>
+    </view>
+    <view class="cont3 cont31 clearfix ulev-3">
+      <span class="ufl color-aaa">维修态度</span>
+      <span class="ufr color-aaa cutText-2">{{pointDetail.serviceScore}}分</span>
+    </view>
+    <view class="cont3 cont31 clearfix ulev-3">
+      <span class="ufl color-aaa">维修质量</span>
+      <span class="ufr color-aaa cutText-2">{{pointDetail.qualityScore}}分</span>
+    </view>
+    <view class="cont3 cont31 clearfix ulev-3">
+      <span class="ufl color-aaa">维修频率</span>
+      <span class="ufr color-aaa cutText-2">{{pointDetail.numberScore}}分</span>
+    </view>
+    <view class="cont3 clearfix ulev-3">
+      <span class="ufl">评价建议</span>
+      <span class="ufr color-aaa cutText-2">{{pointDetail.descs}}</span>
+    </view>
+  </view>
+
+  <view wx:if="{{sueDetail.rows}}" wx:for="{{sueDetail.rows}}" wx:for-item="item" data-id="{{item.id}}" wx:key="item.id">
+
+    <view class="bg-eee jiange"></view>
+
+    <view class="content2">
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">投诉时间</span>
+        <span class="ufr color-aaa cutText-2">{{item.createDt}}</span>
+      </view>
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">投诉内容</span>
+        <span class="ufr color-aaa cutText-2">{{item.descs}}</span>
+      </view>
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">处理时间</span>
+        <span class="ufr color-aaa cutText-2">{{item.endTime}}</span>
+      </view>
+      <view class="cont3 clearfix ulev-3">
+        <span class="ufl">处理结果</span>
+        <span class="ufr color-aaa cutText-2">{{item.results}}</span>
+      </view>
+    </view>
+
+  </view>
+
+   
+</view>

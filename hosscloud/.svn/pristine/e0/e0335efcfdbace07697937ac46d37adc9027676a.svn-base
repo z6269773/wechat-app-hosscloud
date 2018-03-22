@@ -1,0 +1,4 @@
+<view class='containers'>
+
+  <view bindtap='signout'>退出登录</view>
+</view>

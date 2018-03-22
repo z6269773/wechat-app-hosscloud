@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<view class="containers">
+  <view class='lis'>
+    <view class='ub conb ulev-4'>
+      <image class='category' src='{{repairurl}}'></image>
+      <view class='conb2'>
+        <view class='txts font_weight ulev-3 cutText'>{{projectname}}</view>
+        <view class='txts color-666 cutText-2'>{{createdt}}</view>
+      </view>
+    </view>
+  
+  </view>
+
+  <view class='lis'>
+    
+    <view class='ub conb ulev-4'>
+      <view class='red'>维修及时：</view>
+       <view wx:for="{{[1, 2, 3, 4, 5]}}" wx:for-item="i" wx:key="i">
+        <image bindtap='toEvaluate' data-index='{{i}}' wx:if="{{i <= index1}}" class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image bindtap='toEvaluate' data-index='{{i}}' wx:else class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx.png'></image> 
+      </view> 
+    </view>
+     <view class='ub conb ulev-4'>
+      <view class='red'>服务态度：</view>
+      <view wx:for="{{[1, 2, 3, 4, 5]}}" wx:for-item="i" wx:key="i">
+        <image bindtap='toEvaluate2' data-index='{{i}}' wx:if="{{i <= index2}}" class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image bindtap='toEvaluate2' data-index='{{i}}' wx:else class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx.png'></image> 
+      </view>
+    </view>
+    <view class='ub conb ulev-4'>
+      <view class='red'>维修质量：</view>
+      <view wx:for="{{[1, 2, 3, 4, 5]}}" wx:for-item="i" wx:key="i">
+        <image bindtap='toEvaluate3' data-index='{{i}}' wx:if="{{i <= index3}}" class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image bindtap='toEvaluate3' data-index='{{i}}' wx:else class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx.png'></image> 
+      </view>
+    </view>
+    <view class='ub conb ulev-4'>
+      <view class='red'>维修频率：</view>
+      <view wx:for="{{[1, 2, 3, 4, 5]}}" wx:for-item="i" wx:key="i">
+        <image bindtap='toEvaluate4' data-index='{{i}}' wx:if="{{i <= index4}}" class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx_h.png'></image>
+        <image bindtap='toEvaluate4' data-index='{{i}}' wx:else class='icon_wjx' src='https://res.fuyitianjian.net/images/wxml/icon_wjx.png'></image> 
+      </view>
+    </view> 
+
+
+    <view class='ub conb ulev-4'>
+      <view class='red'>评价建议：</view>
+      <textarea class='textarea' bindinput="searchdescs" placeholder='请给工人评价，不少于6个字'></textarea>
+    </view>
+  
+  </view>
+ 
+   <view class='btn' bindtap='submit'>提交</view> 
+   
+</view>

@@ -1,0 +1,31 @@
+.container {
+  padding:0 0;
+  }
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+
+.weui-navbar{
+  background-color:#FFF;
+}
+.weui-cells__swiper_show{
+  display: none;
+}
+.page{
+  background-color: #eee;
+}
+.no_data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80rpx;
+}
+.no_data_img{
+  width: 360rpx;
+  height: 380rpx;
+}

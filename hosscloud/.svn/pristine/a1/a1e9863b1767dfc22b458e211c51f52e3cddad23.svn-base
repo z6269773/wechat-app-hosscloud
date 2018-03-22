@@ -1,0 +1,78 @@
+<!--index.wxml-->
+<view class="containers">
+  
+  <view class="content5">
+    <view class="ct5 ulev-3 ub">
+      <view class="ct5l">
+        <image class='status_img' src="https://res.fuyitianjian.net/images/wxml/icon_ing.png"/>
+        <p class="bg-6494f6"></p>
+      </view>
+      <view class="ct5r">
+        <view>工单挂起中，等待外协</view>
+        <span class="color-aaa">2017-08-21  12:03:05</span>
+      </view>
+    </view>
+    <view class="ct5 ulev-3 ub">
+      <view class="ct5l">
+        <image class='status_img_xiao' src="https://res.fuyitianjian.net/images/wxml/icon_dui.png"/>
+        <p class="bg-6494f6"></p>
+      </view>
+      <view class="ct5r">
+        <view>工单已接单，正在维修</view>
+        <span class="color-aaa">2017-08-22  12:03:05</span>
+      </view>
+    </view>
+    <view class="ct5 ulev-3 ub">
+      <view class="ct5l">
+        <image class='status_img_xiao' src="https://res.fuyitianjian.net/images/wxml/icon_dui.png"/>
+        <p class="bg-6494f6"></p>
+      </view>
+      <view class="ct5r">
+        <view>工单已派工，等待接单</view>
+        <span class="color-aaa">2017-08-23  12:03:05</span>
+      </view>
+    </view>
+    <view class="ct5 ulev-3 ub">
+      <view class="ct5l">
+        <image class='status_img_xiao' src="https://res.fuyitianjian.net/images/wxml/icon_dui.png"/>
+        <p class="bg-6494f6"></p>
+      </view>
+      <view class="ct5r">
+        <view>工单已接单，工单转单</view>
+        <span class="color-aaa">2017-08-24  12:03:05</span>
+      </view>
+    </view>
+    <view class="ct5 ulev-3 ub">
+      <view class="ct5l">
+        <image class='status_img_xiao' src="https://res.fuyitianjian.net/images/wxml/icon_dui.png"/>
+        <p class="bg-6494f6"></p>
+      </view>
+      <view class="ct5r">
+        <view>工单已派工，等待接单</view>
+        <span class="color-aaa">2017-08-25  12:03:05</span>
+      </view>
+    </view>
+    <view class="ct5 ulev-3 ub">
+      <view class="ct5l">
+        <image class='status_img_xiao' src="https://res.fuyitianjian.net/images/wxml/icon_dui.png"/>
+        <p class="bg-6494f6"></p>
+      </view>
+      <view class="ct5r">
+        <view>工单已调度，等待派工</view>
+        <span class="color-aaa">2017-08-26  12:03:05</span>
+      </view>
+    </view>
+    <view class="ct5 ulev-3 ub">
+      <view class="ct5l">
+        <image class='status_img_xiao' src="https://res.fuyitianjian.net/images/wxml/icon_dui.png"/>
+        <!--<p class="bg-6494f6"></p>-->
+      </view>
+      <view class="ct5r">
+        <view>工单已创建，等待调度</view>
+        <span class="color-aaa">2017-08-27  12:03:05</span>
+      </view>
+    </view>
+  </view>
+
+   
+</view>

@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="containers">
+  <view class='lis'>
+    <view class='ub conb ulev-4'>
+      <image class='category' src='{{repairurl}}'></image>
+      <view class='conb2'>
+        <view class='txts font_weight ulev-3 cutText'>{{projectname}}</view>
+        <view class='txts color-666 cutText-2'>{{createdt}}</view>
+      </view>
+    </view>
+  
+  </view>
+
+  <view class='lis'>
+    <view class='ub conb ulev-4'>
+      <view class='red'><text style='color:red;'>*</text> 投诉内容</view>
+      <textarea class='textarea' bindinput="searchdescs" placeholder='请输入投诉内容，不少于10个字'></textarea>
+    </view>
+  
+  </view>
+
+  <view class='btn' catchtap='repiarSue'>提交</view>
+   
+</view>

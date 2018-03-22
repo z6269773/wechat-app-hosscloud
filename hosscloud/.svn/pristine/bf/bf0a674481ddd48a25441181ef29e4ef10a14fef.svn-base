@@ -1,0 +1,86 @@
+
+const app = getApp()
+
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    phone: null, //手机号
+    password: null //密码
+  },
+  onShow: function(options) {
+     // 生命周期函数--监听小程序显示(后退到这个页面的时候这个就会被回调)    当小程序启动，或从后台进入前台显示，会触发 onShow    
+    console.log(wx.getStorageSync('token'))
+
+    if (!wx.getStorageSync('token')) {
+      wx.navigateTo({
+        url: '../login/login',
+        success: res => {
+          console.log(res)
+        },
+        fail: res => {
+          console.log(res)
+        }
+      })
+    }
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    // console.log(wx.getStorageSync('token'))
+  },
+  scanCode: function () {
+    wx.scanCode({
+      success: (res) => {
+        console.log(res)
+        wx.setStorageSync('result', res.result)
+        wx.request({
+          url: res.result, //接口地址
+          header: {
+            'content-type': 'application/json', // 默认值
+            'User2-Agent': 'wechat.com'
+          },
+          success:(res) => {
+            console.log(res.data.results)
+            if (res.data.results.qcCodeType == "roomCode"){
+              wx.setStorageSync('roomid ', res.data.results.id)
+              wx.navigateTo({
+                url: '../select_device/index?id=' + res.data.results.id
+              })
+            }else{
+              wx.setStorageSync('device_id', res.data.results.id)
+              wx.navigateTo({
+                url: '../device_detail/index?id=' + res.data.results.id
+              })
+            }
+            
+          },
+          fail: (res) =>{
+            console.log(res)
+          }
+        })
+      },
+      fail: (res) => {
+        wx.showToast({
+          title: '失败',
+          icon: 'success',
+          duration: 1000
+        })
+      }, 
+    })
+  }
+
+  
+
+ 
+})

@@ -1,0 +1,36 @@
+
+.containers{
+  width: 100vw;
+  height: 100vh;
+}
+
+.logo{
+  display: block;
+  width: 40vw;
+  height: 40vw;
+  padding-top: 10vh;
+  margin: auto
+}
+
+
+.search-container {
+  width: 100%; 
+  display: flex;
+  align-items: center;
+}
+.search-container image{
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+  color: white;
+  padding-left: 20px;
+  line-height: 20px;
+}
+ .search-container input {
+  background: #FFF;
+  color: #AAA;
+  padding: 5px 10rpx;
+  height: 40rpx;
+  width: 100%;
+  border-radius: 8rpx;
+}
