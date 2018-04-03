@@ -1,0 +1,11 @@
+video{
+  width: 750rpx;
+}
+
+.btn{
+  width: 40%;
+  padding: 20rpx 0;
+  margin: 0 5%;
+  border-radius: 4px;
+  color: white;
+}

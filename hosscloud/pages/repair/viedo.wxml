@@ -1,0 +1,9 @@
+<view>
+  <video src="{{url}}" controls ></video>
+
+  <view class='ub'>
+    <view class='btn tx-c bg-6494f6' bindtap='agin'>重新录制</view>
+    <view class='btn tx-c bg-6494f6' bindtap='sub'>确定</view>
+  </view>
+  
+</view>
